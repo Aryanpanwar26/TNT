@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<style>
+    html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: auto;
+    padding: 0px;
+    font-weight: bolder;
+    width: 70%;
+    background-color: white;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.nav{
+    padding: 10px;
+    height: 30px;
+    padding-top: 20px;
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.nav>a{
+    color: black;
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px;
+    font-weight: bolder;
+    font-size: large;
+    transition: 0.3s ease-in-out;
+}
+
+#img{
+     width: 200px;
+     border-radius: 50%;
+     margin: 20px;
+     margin-right: 50px;
+     transition: all 0.3s ease-in-out;
+}
+#img:hover{
+    filter: brightness(90%);
+    border-radius: 20px;
+}
+span{
+    color: rgb(21, 186, 186);
+    font-size: 20px;
+    font-weight: bolder;
+}
+.hcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.intro,span{
+    font-size: xx-large;
+    text-align: center;
+}
+
+.header{
+    display: inline;
+    padding: 10px;
+    margin: 10px;
+    width: 700px;
+}
+#Home{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    line-height: 25px;
+    margin: auto;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+#Bear{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card{
+    display: inline-block;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    max-width: 700px;
+    border-radius: 20px;
+    transition: 0.4s ease-in-out;
+}
+.card:hover{
+    box-shadow: 0px 0px 10px 4px rgb(123, 123, 123);
+    transform: translate(0, -10px);
+}
+.card > h3{
+    font-size: larger;
+}
+#TSkill{
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin-top: 80px;
+}
+.tcard{
+    display: inline-block;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    height: 170px;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+}
+.tcard:hover{
+    box-shadow: 0px 0px 10px 4px rgb(123, 123, 123);
+    transform: translate(0, -10px);
+}
+.pcard{
+    display: block;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+.pcard:hover{
+    box-shadow: 0px 0px 10px 4px rgb(123, 123, 123);
+    transform: translate(0, -10px);
+}
+.pcard>h3{
+    text-align: center;
+}
+.pcard > .des{
+    opacity: 50%;
+}
+#Certificate{
+    margin-top: 80px;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+#Contact{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    text-align: center;
+}
+.top{
+    position: fixed;
+    border: 1px solid black;
+    font-size: 40px;
+    left: 0px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    bottom: 0;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+}
+.theme{
+    position: fixed;
+    font-size: 20px;
+    right: 0;
+    color: white;
+    font-weight: bolder;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    width: 40px;
+    justify-content: center;
+    height: 40px;
+    bottom: 0;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    padding: 0px;
+}
+.theme>img{
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    filter: contrast(3);
+}
+.top > a{
+    text-decoration: none;
+    margin-bottom: auto;
+    color: rgb(255, 255, 255);
+}
+
+.topBotomBordersOut > div > a{
+    position: relative;
+}
+.topBotomBordersOut div a::before, .topBotomBordersOut div a::after{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+.topBotomBordersOut div a::before{
+    top: 0px;
+    transform: translateY(-10px);
+}
+.topBotomBordersOut div a::after{
+    bottom: 0px;
+    transform: translateY(10px);
+}
+div.topBotomBordersOut div a:hover::before, div.topBotomBordersOut div a:hover::after
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+#Skill, #TSkill, #Education, #Project, #Certificate, .head{
+    padding: 50px 20px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+#Certificate{
+    margin-bottom: 50px;
+}
+footer{
+    font-size: 15px;
+    margin: 10px;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+</style>
+<body>
+    <nav>
+        <div class="container topBotomBordersOut">
+            <div class="nav"><a href="#Home">Home</a></div>
+            <div class="nav"><a href="#Bear">Bear-Hunt</a></div>
+            <div class="nav"><a href="#Arena">Arena</a></div>
+            <div class="nav"><a href="#BIA">Brothers-in-Arms</a></div>
+            <div class="nav"><a href="https://discord.gg/8kAeSZvR" style="color: red; text-decoration: none;">Discord</a></div>
+        </div>
+    </nav>
+    <hr>
+    <div id="Home">
+        <div class="hcontainer">
+            <div class="header"><p class="intro">Welcome to The <span>TNT</span> OUTCASTFOREVER</p>
+            <p style="text-align: center;">Alliance Head : <span style="font-size: large; color: red;">MAMA NORT</span>  <br> State : 2488 <br/>  </p>
+        </div>
+        </div>
+    </div>
+    <div id="Bear">
+    <h1>Bear Hunt 🧸</h1>
+    <div class="container">
+        <div class="card">
+            <h3 style="color: darkturquoise;">When initiating a rally-</h3>
+            <p>Take your best heroes when initiating a rally. Adjust your troops so that you can join other rallies too to increase the damage.</p>
+            <h3 style="color: darkturquoise;">When joining a rally-</h3>
+            <p>When joining a rally, your first(left-most side) heroes should be <span style="font-size: medium; color: rgb(77, 183, 77); font-style: italic;">Jessie, Jasser and Seo Yoon</span>. Other 2 heroes doesn't matter.</p>
+            <h3 style="color: red;">What you should not be doing?</h3>
+            <p>-Not following the rules mentioned above.</p>
+            <p>-Not initiating a rally before joining others.</p>
+        </div>
+    </div>
+    </div>
+    <div id="Arena"></div>
+    <h1 style="text-align: center;   font-family: 'Courier New', Courier, monospace;">Arena</h1>
+    <div class="container" style="  font-family: 'Courier New', Courier, monospace; font-weight: bolder;">
+        <div class="card">
+            <p >So, regarding the Arena, there are some few points that might be beneficial to gain more points: <br/>
+                <ul>
+                    <li>Pay attention to your lineup, you need to select the right lineup for both phases (defensive is while you are away, and the other phase while you do your challenges)</li>
+                    <li>Prefered to use infantry at the front line, like Surgery, use lancers at sides or front, and finally marksman at back.</li>
+                    <li>Do your challenges at the end of day.</li>
+                    <li>I usually spend gems to gain more challenge attempts.</li>
+                </ul>
+            </p>
+            <p style="text-align: right;">Credit - Omar Nour</p>
+        </div>
+    </div>
+    </div>
+    <div id="BIA"></div>
+    <h1 style="text-align: center;   font-family: 'Courier New', Courier, monospace;">Brothers in Arms</h1>
+    <div class="container" style="  font-family: 'Courier New', Courier, monospace; font-weight: bolder;">
+        <div class="card">
+            <p >RULES ARE AS FOLLOWS: <br/>
+                <ul>
+                    <li>Gathering Tiles can be attacked.</li>
+                    <li>No rallies.</li>
+                    <li>No attacks if Castle is burning.</li>
+                    <li>No attacks on NAP10 + NAP10 Academies.</li>
+                </ul>
+            </p>
+            <p style="text-align: right;">Credit - SOLO</p>
+        </div>
+    </div>
+    </div>
+    <hr> 
+    <footer>Copyright &copy 2024 | IDGAF</footer>
+    <button class="top"><a class="link" href="#">^</a></button>
+    <button type="button" class="theme" onclick="theme()"><img src="https://cdn.mos.cms.futurecdn.net/CuvF3WXPdDPGkDzfD7Esbb-320-80.jpg" alt="theme"></button>
+</body>
+<script>
+    let i=0;
+    function theme(){
+        i++;
+        if(i==1){
+            document.body.style.backgroundColor = "Black";
+            document.body.style.color = "white";
+            document.querySelector("hr").style.color = "white";
+            document.querySelectorAll("a").forEach(element => {
+                element.style.color = "white";
+            });
+            document.querySelectorAll(".card").forEach(element => {
+                element.style.borderColor = "white";
+            });
+            document.querySelectorAll(".tcard").forEach(element => {
+                element.style.borderColor = "white";
+            });
+            document.querySelectorAll(".scard").forEach(element => {
+                element.style.borderColor = "white";
+            });
+            document.querySelectorAll(".pcard").forEach(element => {
+                element.style.borderColor = "white";
+            });
+            document.querySelector(".theme").innerHTML = `<img src="https://media.istockphoto.com/id/180231294/photo/blue-moon.jpg?s=612x612&w=0&k=20&c=RldfRwUSKI1GLMMpXNHqM1pjXKy23K_HYSKAggWRSeo=" alt="theme">`;
+            document.querySelector(".theme").style.backgroundColor="white";
+            document.querySelector(".theme").style.color="black";
+            document.querySelector(".top").style.backgroundColor="white";
+            document.querySelector(".link").style.color="black";
+        }
+        else if(i==2){
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            document.querySelector("hr").style.color = "black";
+            document.querySelectorAll("a").forEach(element => {
+                element.style.color = "black";
+            });
+            document.querySelectorAll(".card").forEach(element => {
+                element.style.borderColor = "black";
+            });
+            document.querySelectorAll(".tcard").forEach(element => {
+                element.style.borderColor = "black";
+            });
+            document.querySelectorAll(".scard").forEach(element => {
+                element.style.borderColor = "black";
+            });
+            document.querySelectorAll(".pcard").forEach(element => {
+                element.style.borderColor = "black";
+            });
+            document.querySelector(".theme").innerHTML = `<img src="https://cdn.mos.cms.futurecdn.net/CuvF3WXPdDPGkDzfD7Esbb-320-80.jpg" alt="theme">`;
+            document.querySelector(".theme").style.backgroundColor="black";
+            document.querySelector(".theme").style.color="white";
+            document.querySelector(".link").style.color="white";
+            document.querySelector(".top").style.backgroundColor="black";
+            i=0;
+        }
+    }
+</script>
+</html>
